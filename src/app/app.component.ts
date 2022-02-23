@@ -51,8 +51,18 @@ export class AppComponent {
     dateObject: Date = new Date();
     localeLanguages: string[] = [ 'es', 'en', 'fr' ];
     languageSelected: string = 'es';
+    customPipes: string[] = [ 'capiTaliZe pIPe', 'safeDOM', 'password' ];
+    video: any = {
+        url: 'https://www.youtube.com/embed/_p5j28wy6jc?start=1',
+        title: 'YouTube video player'
+    };
+    activatePassword: boolean = true;
+    passWord: string = 'Asuranceturix2022';
 
     changeLocale = ( locale:string ) => {
         this.languageSelected = locale;
+    }
+    showPassword = () => {
+        this.activatePassword = !this.activatePassword;
     }
 }

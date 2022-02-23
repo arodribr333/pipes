@@ -15,12 +15,12 @@
         <div class="col">
             <ul class="nav nav-pills">
                 <li class="nav-item" *ngFor="let pLink of pipeLinks">
-                    <a href="{{pLink.url}}" class="nav-link active" target="_blank" title="{{pLink.titleText}}">{{pLink.linkText}}</a>
+                    <a [href]="pLink.url" class="nav-link active" target="_blank" [title]="pLink.titleText">{{pLink.linkText}}</a>
                 </li>
             </ul>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
         <div class="col">
             <div class="accordion" id="accordionPipes">
 
@@ -342,6 +342,12 @@
                                     <tr>
                                         <td>{{dateObject}}</td>
                                         <td>date</td>
+                                        <td>date:'dd-mm-yy':''</td>
+                                        <td>{{dateObject|date:'dd-mm-yy':''}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{dateObject}}</td>
+                                        <td>date</td>
                                         <td>date:'YY-MM-dd'</td>
                                         <td>{{dateObject|date:'YYYY-MM-dd'}}</td>
                                     </tr>
@@ -407,35 +413,6 @@
                 </div>
 
                 <div class="accordion-item">
-                    <h3 class="accordion-header" id="headingSeven">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven"
-                            aria-expanded="false" aria-controls="collapseSeven">
-                            {{pipes[6]}}
-                        </button>
-                    </h3>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-                        data-bs-parent="#accordionPipes">
-                        <div class="accordion-body">
-                            <table class="table table-striped mb-0">
-                                <thead class="">
-                                    <tr>
-                                        <th *ngFor="let col of tableCols">{{col}}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{promiseValue}}</td>
-                                        <td>async</td>
-                                        <td>Default</td>
-                                        <td>{{promiseValue|async}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
                     <h3 class="accordion-header" id="headingTen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
@@ -445,21 +422,76 @@
                     <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
                         data-bs-parent="#accordionPipes">
                         <div class="accordion-body">
-                            <table class="table table-striped mb-0">
-                                <thead class="">
-                                    <tr>
-                                        <th *ngFor="let col of tableCols">{{col}}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{promiseValue}}</td>
-                                        <td>async</td>
-                                        <td>Default</td>
-                                        <td>{{promiseValue|async}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div>
+                                <h4 class="h5">{{customPipes[0]|capitalize:false}}</h4>
+                                <table class="table table-striped mb-0">
+                                    <thead class="">
+                                        <tr>
+                                            <th *ngFor="let col of tableCols">{{col}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{nameTransform}}</td>
+                                            <td>capitalize || capitalize:true</td>
+                                            <td>Default</td>
+                                            <td>{{nameTransform|capitalize}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{nameTransform}}</td>
+                                            <td>capitalize:false</td>
+                                            <td>Only first capitalized</td>
+                                            <td>{{nameTransform|capitalize:false}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="h5">{{customPipes[1]|capitalize:false}}</h4>
+                                <table class="table table-striped mb-0">
+                                    <thead class="">
+                                        <tr>
+                                            <th *ngFor="let col of tableCols">{{col}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{video.url}}</td>
+                                            <td>safedom</td>
+                                            <td>Default</td>
+                                            <td>{{video.url|safedom}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="mt-2">
+                                    <iframe width="560" height="315" [src]="video.url|safedom" [title]="video.title"
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <h4 class="h5">{{customPipes[2]|capitalize:false}}</h4>
+                                <table class="table table-striped mb-0">
+                                    <thead class="">
+                                        <tr>
+                                            <th *ngFor="let col of tableCols">{{col}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{passWord}}</td>
+                                            <td>password:{{activatePassword}}</td>
+                                            <td>Default</td>
+                                            <td>
+                                                {{passWord|password:activatePassword}}
+                                                <div class="mt-2">
+                                                    <button class="btn btn-danger mr-1" (click)="this.showPassword()">Show/Hide</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

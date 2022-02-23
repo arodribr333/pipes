@@ -8,10 +8,16 @@ registerLocaleData( localeEs );
 registerLocaleData( localeFr );
 
 import { AppComponent } from './app.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { SafedomPipe } from './pipes/safedom.pipe';
+import { PasswordPipe } from './pipes/password.pipe';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        CapitalizePipe,
+        SafedomPipe,
+        PasswordPipe
     ],
     imports: [
         BrowserModule
