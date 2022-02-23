@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+.nav{
+    &-item{
+        margin-left: 1rem;
+        &:first-child{
+            margin-left: 0;
+        }
+        .nav{
+            &-link{
+                &:hover{
+                    background-image: var(--bs-gradient) !important;
+                    --bs-bg-opacity: 1;
+                    background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+                }
+            }
+        }
+    }
+}
+.code {
+    padding: 0.2rem 0.5rem;
+    font-family: monospace;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &::before{
+        content: ">";
+        margin-right: .5rem;
+    }
+}
+.chapter{
+    &-nav{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+        img{
+            margin-right: 0.5rem;
+            max-width: 119px;
+        }
+    }
+}

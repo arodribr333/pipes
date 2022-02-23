@@ -1,0 +1,30 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#ff0202",
+        "activityBar.activeBorder": "#ffffff",
+        "activityBar.background": "#db0000",
+        "activityBar.foreground": "#ffffff",
+        "activityBar.inactiveForeground": "#ffffff",
+        "activityBarBadge.background": "#ffffff",
+        "activityBarBadge.foreground": "#ff0202",
+        "statusBar.background": "#db0000",
+        "statusBar.foreground": "#ffffff",
+        "statusBarItem.hoverBackground": "#db0000",
+        "titleBar.activeBackground": "#db0000",
+        "titleBar.activeForeground": "#ffffff",
+        "titleBar.inactiveBackground": "#ff0202",
+        "titleBar.inactiveForeground": "#ffffff",
+        "editorGroup.border": "#db0000",
+        "panel.border": "#db0000",
+        "sideBar.border": "#db0000",
+        "statusBar.border": "#db0000",
+        "titleBar.border": "#db0000",
+        "editor.background": "#000000",
+        "tab.activeBorderTop": "#ffffff",
+        "tab.activeBorder": "#db0000"
+    },
+
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active",
+    "editor.wordWrap": "on"
+}
